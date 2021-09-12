@@ -1,5 +1,5 @@
 // Coloque aqui suas actions
-import requestApi from '../service/requestApi';
+import requestApi from '../../service/requestApi';
 
 export const LOGIN_USER = 'LOGIN-USER';
 export const HANDLE_EXPENSE_FORM_INPUTS = 'HANDLE_EXPENSE_FORM_INPUTS';

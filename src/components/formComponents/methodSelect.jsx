@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { handleExpenseForm } from '../../actions';
+import { handleExpenseForm } from '../../redux/actions';
 
 const MathodSelect = (props) => {
   const { method, handleExpenseFormInputs } = props;

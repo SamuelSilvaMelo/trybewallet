@@ -2,7 +2,7 @@ import React from 'react';
 import '../style/pages/wallet.css';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { requestCoins } from '../actions';
+import { requestCoins } from '../redux/actions';
 import logoImg from '../img/Trybe_logo-baixa.png';
 import WalletForm from '../components/walletForm';
 import ExpenseTable from '../components/expenseTable';

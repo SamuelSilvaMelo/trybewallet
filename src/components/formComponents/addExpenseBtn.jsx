@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { requestExpense, setDefaultFormValues } from '../../actions';
+import { requestExpense, setDefaultFormValues } from '../../redux/actions';
 
 const AddExpenseBtn = (props) => {
   const { form, requestExpenseInfo, setDefaultEntries } = props;

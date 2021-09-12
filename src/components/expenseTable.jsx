@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as MdIcons from 'react-icons/md';
-import { removeExpense, editExpense } from '../actions';
+import { removeExpense, editExpense } from '../redux/actions';
 import expenseTableHead from '../data/expenseTableHead';
 
 const ExpenseTable = (props) => {
