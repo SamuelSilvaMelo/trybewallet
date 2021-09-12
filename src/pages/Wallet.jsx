@@ -1,5 +1,5 @@
 import React from 'react';
-import './wallet.css';
+import '../style/pages/wallet.css';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { requestCoins } from '../actions';

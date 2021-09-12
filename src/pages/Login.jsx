@@ -1,5 +1,5 @@
 import React from 'react';
-import './login.css';
+import '../style/pages/login.css';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
