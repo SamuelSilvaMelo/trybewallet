@@ -1,22 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { removeExpense, editExpense } from '../actions';
+import * as MdIcons from 'react-icons/md';
+import { removeExpense, editExpense } from '../redux/actions';
 import expenseTableHead from '../data/expenseTableHead';
 
 const ExpenseTable = (props) => {
   const { expenses, removeExpenseValue, editExpenseValue } = props;
-
   return (
-    <table>
-      <thead>
+    <table className="expense-table">
+      <thead className="expense-thead">
         <tr>
           { expenseTableHead.map((curr) => (
-            <th key={ curr } name={ curr }>{ curr }</th>
-          ))}
+            <th key={ curr } name={ curr }>{ curr }</th>))}
         </tr>
       </thead>
-      <tbody>
+      <tbody className="expense-tbody">
         { expenses.map((curr) => {
           const { id, description, tag, method, value, currency, exchangeRates } = curr;
           const roundedValue = (valueInput) => Math.round(valueInput * 100) / 100;
@@ -34,16 +33,18 @@ const ExpenseTable = (props) => {
                 <button
                   type="button"
                   data-testid="edit-btn"
+                  className="edit-btn"
                   onClick={ () => editExpenseValue(curr) }
                 >
-                  Editar
+                  <MdIcons.MdModeEdit />
                 </button>
                 <button
                   type="button"
                   data-testid="delete-btn"
+                  className="delete-btn"
                   onClick={ () => removeExpenseValue(id) }
                 >
-                  Remove
+                  <MdIcons.MdDelete />
                 </button>
               </td>
             </tr>

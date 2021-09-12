@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wallet-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  width: 100%;
+}
+
+.wallet-header img {
+  width: 150px;
+}
+
+.wallet-header section {
+  display: flex;
+  align-items: center;
+}
+
+.email-field {
+  margin-right: 50px;
+}
+
+.total-field {
+  margin-right: 5px;
+}
+
+.wallet-header section div:nth-child(3) {
+  margin-right: 50px;
+}
+
+main {
+  height: 100vh;
+}
+
+.expense-form {
+  background-color: #272b33;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 30px;
+  min-width: max-content;
+}
+
+.expense-form label {
+  align-items: center;
+  color: white;
+  display: flex;
+  font-weight: 700;
+}
+
+.expense-form input , .expense-form select {
+  height: 30px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.expense-form select {
+  background-color: white;
+}
+
+.add-expense-btn , .edit-expense-btn , .logout-btn  {
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  height: 30px;
+  margin: 5px;
+  padding: 5px 10px;
+  min-width: 145px;
+}
+
+.add-expense-btn , .logout-btn {
+  background-color: #4673fc;
+  border: 1px solid #4673fc;
+}
+
+.edit-expense-btn {
+  background-color: rgb(240, 192, 37);
+  border: 1px solid rgb(240, 192, 37);
+}
+
+/* Como remover borda das tabelas \0/: */
+/* https://www.ti-enxame.com/pt/html/como-remover-espaco-indesejado-entre-linhas-e-colunas-na-tabela/968502664/ */
+
+.expense-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: max-content;
+}
+
+.expense-thead {
+  background-color: #33393e;
+  color: white;
+  line-height: 50px;
+  text-align: center;
+}
+
+.expense-thead tr th:nth-child(1) {
+  width: 300px;
+}
+
+.expense-tbody td {
+  padding: 10px;
+  text-align: center;
+}
+
+.expense-tbody tr td:nth-child(1) {
+  word-wrap: break-word;
+  width: 300px;
+}
+
+.edit-btn , .delete-btn {
+  border-radius: 5px;
+  padding: 2px 5px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.edit-btn:hover , .delete-btn:hover {
+  opacity: 0.5;
+}
+
+.edit-btn {
+  background-color: rgb(240, 192, 37);
+  border: 1px solid rgb(240, 192, 37);
+}
+
+.delete-btn {
+  background-color: red;
+  border: 1px solid red;
+}
+
+.edit-btn svg, .delete-btn svg {
+  color: white;
+  height: auto;
+  width: 15px;
+}

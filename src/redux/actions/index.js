@@ -1,8 +1,10 @@
 // Coloque aqui suas actions
-import requestApi from '../service/requestApi';
+import requestApi from '../../service/requestApi';
 
 export const LOGIN_USER = 'LOGIN-USER';
+export const LOGOUT_USER = 'LOGOUT_USER';
 export const HANDLE_EXPENSE_FORM_INPUTS = 'HANDLE_EXPENSE_FORM_INPUTS';
+export const DEFAULT_EXPENSE_FORMS = 'DEFAULT_EXPENSE_FORMS';
 export const REQUESTING_COINS = 'REQUESTING_COINS';
 export const RECEIVE_COINS = 'RECEIVE_COINS';
 export const RECEIVE_EXPENSE_DATA = 'RECEIVE_EXPENSE_DATA';
@@ -11,10 +13,30 @@ export const INCREASE_ID = 'INCREASE_ID';
 export const EDIT_EXPENSE_VALUE = 'EDIT_EXPENSE_VALUE';
 export const UPDATE_EXPENSE = 'UPDATE_EXPENSE';
 
-export const loginUser = (email) => ({
-  type: LOGIN_USER,
-  email,
-});
+export const loginUser = (email) => {
+  localStorage.setItem(
+    'TrybeWalletLogin',
+    JSON.stringify(
+      {
+        email,
+        isLogged: true,
+      },
+    ),
+  );
+
+  return ({
+    type: LOGIN_USER,
+    email,
+  });
+};
+
+export const logoutUser = () => {
+  localStorage.removeItem('TrybeWalletLogin');
+
+  return ({
+    type: LOGOUT_USER,
+  });
+};
 
 export const handleExpenseForm = (target) => {
   const { name, value } = target;
@@ -24,6 +46,10 @@ export const handleExpenseForm = (target) => {
     value,
   };
 };
+
+export const setDefaultFormValues = () => ({
+  type: DEFAULT_EXPENSE_FORMS,
+});
 
 export const requestingData = () => ({
   type: REQUESTING_COINS,

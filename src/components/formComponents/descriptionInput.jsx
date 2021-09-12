@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { handleExpenseForm } from '../../actions';
+import { handleExpenseForm } from '../../redux/actions';
 
 const DescriptionInput = (props) => {
   const { description, handleExpenseFormInputs } = props;
@@ -12,6 +12,7 @@ const DescriptionInput = (props) => {
         type="text"
         id="description"
         name="description"
+        maxLength="100"
         value={ description }
         data-testid="description-input"
         onChange={ handleExpenseFormInputs }
