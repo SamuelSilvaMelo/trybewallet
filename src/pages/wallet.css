@@ -68,3 +68,23 @@ main {
   margin: 5px;
   padding: 5px 10px;
 }
+
+/* Como remover borda das tabelas \0/: */
+/* https://www.ti-enxame.com/pt/html/como-remover-espaco-indesejado-entre-linhas-e-colunas-na-tabela/968502664/ */
+
+.expense-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.expense-thead {
+  background-color: #33393e;
+  color: white;
+  line-height: 50px;
+  text-align: center;
+}
+
+.expense-tbody td {
+  padding: 10px;
+  text-align: center;
+}
