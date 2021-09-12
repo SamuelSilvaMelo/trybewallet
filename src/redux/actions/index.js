@@ -12,10 +12,22 @@ export const INCREASE_ID = 'INCREASE_ID';
 export const EDIT_EXPENSE_VALUE = 'EDIT_EXPENSE_VALUE';
 export const UPDATE_EXPENSE = 'UPDATE_EXPENSE';
 
-export const loginUser = (email) => ({
-  type: LOGIN_USER,
-  email,
-});
+export const loginUser = (email) => {
+  localStorage.setItem(
+    'TrybeWalletLogin',
+    JSON.stringify(
+      {
+        email,
+        isLogged: true,
+      },
+    ),
+  );
+
+  return ({
+    type: LOGIN_USER,
+    email,
+  });
+};
 
 export const handleExpenseForm = (target) => {
   const { name, value } = target;
