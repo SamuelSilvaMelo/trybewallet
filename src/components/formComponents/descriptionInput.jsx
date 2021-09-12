@@ -12,6 +12,7 @@ const DescriptionInput = (props) => {
         type="text"
         id="description"
         name="description"
+        maxLength="100"
         value={ description }
         data-testid="description-input"
         onChange={ handleExpenseFormInputs }

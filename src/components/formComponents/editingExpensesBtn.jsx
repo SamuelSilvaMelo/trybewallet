@@ -7,6 +7,7 @@ const EditingExpensesBtn = (props) => {
   const { form, updateExpenseInfo } = props;
   return (
     <button
+      className="edit-expense-btn"
       type="button"
       onClick={ () => updateExpenseInfo(form) }
     >
