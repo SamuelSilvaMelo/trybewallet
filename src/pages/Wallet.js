@@ -2,8 +2,9 @@ import React from 'react';
 import './wallet.css';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import WalletForm from '../components/walletForm';
 import { requestCoins } from '../actions';
+import logoImg from '../img/Trybe_logo-baixa.png';
+import WalletForm from '../components/walletForm';
 import ExpenseTable from '../components/expenseTable';
 
 class Wallet extends React.Component {
@@ -28,7 +29,7 @@ class Wallet extends React.Component {
     return (
       <>
         <header className="wallet-header">
-          <img src="/Trybe_logo-baixa.png" alt="logo-trybe" />
+          <img src={ logoImg } alt="logo-trybe" />
           <section>
             <div className="email-field" data-testid="email-field">
               {`Email: ${userEmail}`}
