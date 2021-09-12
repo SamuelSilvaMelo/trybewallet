@@ -18,6 +18,7 @@
 
 .wallet-header section {
   display: flex;
+  align-items: center;
 }
 
 .email-field {
@@ -26,6 +27,10 @@
 
 .total-field {
   margin-right: 5px;
+}
+
+.wallet-header section div:nth-child(3) {
+  margin-right: 50px;
 }
 
 main {
@@ -59,7 +64,7 @@ main {
   background-color: white;
 }
 
-.add-expense-btn , .edit-expense-btn  {
+.add-expense-btn , .edit-expense-btn , .logout-btn  {
   border-radius: 4px;
   color: white;
   cursor: pointer;
@@ -70,7 +75,7 @@ main {
   min-width: 145px;
 }
 
-.add-expense-btn {
+.add-expense-btn , .logout-btn {
   background-color: #4673fc;
   border: 1px solid #4673fc;
 }
@@ -118,7 +123,7 @@ main {
 }
 
 .edit-btn:hover , .delete-btn:hover {
-  opacity: 60%;
+  opacity: 20%;
 }
 
 .edit-btn {
