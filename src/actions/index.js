@@ -3,6 +3,7 @@ import requestApi from '../service/requestApi';
 
 export const LOGIN_USER = 'LOGIN-USER';
 export const HANDLE_EXPENSE_FORM_INPUTS = 'HANDLE_EXPENSE_FORM_INPUTS';
+export const DEFAULT_EXPENSE_FORMS = 'DEFAULT_EXPENSE_FORMS';
 export const REQUESTING_COINS = 'REQUESTING_COINS';
 export const RECEIVE_COINS = 'RECEIVE_COINS';
 export const RECEIVE_EXPENSE_DATA = 'RECEIVE_EXPENSE_DATA';
@@ -24,6 +25,10 @@ export const handleExpenseForm = (target) => {
     value,
   };
 };
+
+export const setDefaultFormValues = () => ({
+  type: DEFAULT_EXPENSE_FORMS,
+});
 
 export const requestingData = () => ({
   type: REQUESTING_COINS,

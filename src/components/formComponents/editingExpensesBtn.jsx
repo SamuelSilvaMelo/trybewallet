@@ -1,15 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { expenseUpdate } from '../../actions';
+import { expenseUpdate, setDefaultFormValues } from '../../actions';
 
 const EditingExpensesBtn = (props) => {
-  const { form, updateExpenseInfo } = props;
+  const { form, updateExpenseInfo, setDefaultEntries } = props;
   return (
     <button
       className="edit-expense-btn"
       type="button"
-      onClick={ () => updateExpenseInfo(form) }
+      onClick={ () => {
+        updateExpenseInfo(form);
+        setDefaultEntries();
+      } }
     >
       Editar despesa
     </button>
@@ -22,10 +25,12 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   updateExpenseInfo: (update) => dispatch(expenseUpdate(update)),
+  setDefaultEntries: () => dispatch(setDefaultFormValues()),
 });
 
 EditingExpensesBtn.propTypes = {
   updateExpenseInfo: PropTypes.func.isRequired,
+  setDefaultEntries: PropTypes.func.isRequired,
   form: PropTypes.shape({
     id: PropTypes.number,
     value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),

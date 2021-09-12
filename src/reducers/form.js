@@ -1,4 +1,9 @@
-import { HANDLE_EXPENSE_FORM_INPUTS, INCREASE_ID, EDIT_EXPENSE_VALUE } from '../actions';
+import {
+  HANDLE_EXPENSE_FORM_INPUTS,
+  INCREASE_ID,
+  EDIT_EXPENSE_VALUE,
+  DEFAULT_EXPENSE_FORMS,
+} from '../actions';
 
 const INITIAL_STATE = {
   id: 0,
@@ -30,6 +35,15 @@ const form = (state = INITIAL_STATE, action) => {
       currency: action.payload.currency,
       method: action.payload.method,
       tag: action.payload.tag,
+    };
+  case DEFAULT_EXPENSE_FORMS:
+    return {
+      id: state.id,
+      value: 0,
+      description: '',
+      currency: 'USD',
+      method: 'Dinheiro',
+      tag: 'Alimentação',
     };
   default:
     return state;
