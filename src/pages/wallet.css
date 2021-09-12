@@ -88,3 +88,30 @@ main {
   padding: 10px;
   text-align: center;
 }
+
+.edit-btn , .delete-btn {
+  border-radius: 5px;
+  padding: 2px 5px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.edit-btn:hover , .delete-btn:hover {
+  opacity: 60%;
+}
+
+.edit-btn {
+  background-color: rgb(240, 192, 37);
+  border: 1px solid rgb(240, 192, 37);
+}
+
+.delete-btn {
+  background-color: red;
+  border: 1px solid red;
+}
+
+.edit-btn svg, .delete-btn svg {
+  color: white;
+  height: auto;
+  width: 15px;
+}

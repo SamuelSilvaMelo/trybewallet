@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import * as MdIcons from 'react-icons/md';
 import { removeExpense, editExpense } from '../actions';
 import expenseTableHead from '../data/expenseTableHead';
 
@@ -35,7 +36,7 @@ const ExpenseTable = (props) => {
                   className="edit-btn"
                   onClick={ () => editExpenseValue(curr) }
                 >
-                  <img src="/editar.png" alt="edit-expense" width="20px" />
+                  <MdIcons.MdModeEdit />
                 </button>
                 <button
                   type="button"
@@ -43,7 +44,7 @@ const ExpenseTable = (props) => {
                   className="delete-btn"
                   onClick={ () => removeExpenseValue(id) }
                 >
-                  Remove
+                  <MdIcons.MdDelete />
                 </button>
               </td>
             </tr>
