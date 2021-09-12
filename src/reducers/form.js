@@ -6,6 +6,7 @@ import {
 } from '../actions';
 
 const INITIAL_STATE = {
+  prevId: null,
   id: 0,
   value: 0,
   description: '',
@@ -29,6 +30,7 @@ const form = (state = INITIAL_STATE, action) => {
   case EDIT_EXPENSE_VALUE:
     return {
       ...state,
+      prevId: state.id,
       id: action.payload.id,
       value: action.payload.value,
       description: action.payload.description,
@@ -37,13 +39,20 @@ const form = (state = INITIAL_STATE, action) => {
       tag: action.payload.tag,
     };
   case DEFAULT_EXPENSE_FORMS:
+    // Caso o prevId exista ele restaura o id com o valor do prevId para nao perder a contagem das despesas.
+    if (state.prevId) {
+      return {
+        ...INITIAL_STATE,
+        prevId: null,
+        id: state.prevId,
+      };
+    }
+
+    // Quando o prevId nao existe continua a incrementar o id normalmente.
     return {
+      ...INITIAL_STATE,
+      prevId: state.prevId,
       id: state.id,
-      value: 0,
-      description: '',
-      currency: 'USD',
-      method: 'Dinheiro',
-      tag: 'Alimentação',
     };
   default:
     return state;

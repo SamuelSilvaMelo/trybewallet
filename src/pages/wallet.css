@@ -96,6 +96,10 @@ main {
   text-align: center;
 }
 
+.expense-thead tr th:nth-child(1) {
+  width: 300px;
+}
+
 .expense-tbody td {
   padding: 10px;
   text-align: center;
