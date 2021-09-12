@@ -3,28 +3,12 @@ import '../style/pages/wallet.css';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router';
 import { connect } from 'react-redux';
-import { requestCoins } from '../redux/actions';
+import { requestCoins, logoutUser } from '../redux/actions';
 import logoImg from '../img/Trybe_logo-baixa.png';
 import WalletForm from '../components/walletForm';
 import ExpenseTable from '../components/expenseTable';
 
 class Wallet extends React.Component {
-  constructor() {
-    super();
-
-    const isLogged = localStorage.getItem('TrybeWalletLogin');
-
-    if (isLogged) {
-      this.state = {
-        isLogged: true,
-      };
-    } else {
-      this.state = {
-        isLogged: false,
-      };
-    }
-  }
-
   componentDidMount() {
     const { requestCoinsList } = this.props;
     requestCoinsList();
@@ -42,8 +26,7 @@ class Wallet extends React.Component {
   }
 
   render() {
-    const { isLogged } = this.state;
-    const { userEmail, currencyToExchange } = this.props;
+    const { userEmail, currencyToExchange, logout, isLogged } = this.props;
 
     if (!isLogged) {
       return <Redirect to="/" />;
@@ -63,6 +46,15 @@ class Wallet extends React.Component {
             <div data-testid="header-currency-field">
               { currencyToExchange }
             </div>
+            <div>
+              <button
+                className="logout-btn"
+                type="button"
+                onClick={ () => logout() }
+              >
+                Logout
+              </button>
+            </div>
           </section>
         </header>
         <main>
@@ -75,6 +67,7 @@ class Wallet extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
+  isLogged: state.user.isLogged,
   userEmail: state.user.email,
   expenses: state.wallet.expenses,
   currencyToExchange: state.wallet.currencyToExchange,
@@ -82,6 +75,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   requestCoinsList: () => dispatch(requestCoins()),
+  logout: () => dispatch(logoutUser()),
 });
 
 Wallet.propTypes = {

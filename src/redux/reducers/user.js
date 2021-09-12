@@ -1,5 +1,5 @@
 // Esse reducer será responsável por tratar as informações da pessoa usuária
-import { LOGIN_USER } from '../actions';
+import { LOGIN_USER, LOGOUT_USER } from '../actions';
 
 const INITIAL_STATE = () => {
   const isLogged = localStorage.getItem('TrybeWalletLogin');
@@ -21,6 +21,8 @@ const user = (state = INITIAL_STATE(), action) => {
   switch (action.type) {
   case LOGIN_USER:
     return { ...state, email: action.email, isLogged: true };
+  case LOGOUT_USER:
+    return { ...state, email: '', isLogged: false };
   default:
     return state;
   }

@@ -2,6 +2,7 @@
 import requestApi from '../../service/requestApi';
 
 export const LOGIN_USER = 'LOGIN-USER';
+export const LOGOUT_USER = 'LOGOUT_USER';
 export const HANDLE_EXPENSE_FORM_INPUTS = 'HANDLE_EXPENSE_FORM_INPUTS';
 export const DEFAULT_EXPENSE_FORMS = 'DEFAULT_EXPENSE_FORMS';
 export const REQUESTING_COINS = 'REQUESTING_COINS';
@@ -26,6 +27,14 @@ export const loginUser = (email) => {
   return ({
     type: LOGIN_USER,
     email,
+  });
+};
+
+export const logoutUser = () => {
+  localStorage.removeItem('TrybeWalletLogin');
+
+  return ({
+    type: LOGOUT_USER,
   });
 };
 
