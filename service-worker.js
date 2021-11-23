@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/trybewallet/precache-manifest.9075bc20609f740757f05916aa45c6c4.js"
+  "/trybewallet/precache-manifest.a383209437165500602044326ace6136.js"
 );
 
 self.addEventListener('message', (event) => {
