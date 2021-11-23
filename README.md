@@ -3,6 +3,8 @@
 
 <div align="center">
   <a href="#about">About</a>
+  <span> | </span>
+  <a href="#important">Important</a>
   <span> | </span>  
    <a href="#technologies">Technologies</a>
   <span> | </span>  
@@ -21,6 +23,9 @@
 
 <h1 id="about">💬 About</h1>
 <p>Project carried out to train the use of Redux. A currency converter expense control portfolio was developed. All values are always converted to Brazilian Real (BRL). You can add, edit and delete an expense.</p>
+
+<h1 id="important">⚠️ Important</h1>
+<p>This is <b>just a frontend application</b>, so the login system does not have backend validation. To access the wallet, you just need to enter a valid email address (ex.: <i>teste@email.com</i>) and a password with more than 6 digits (ex.: <i>123456</i>).</p>
 
 <h1 id="technologies">:rocket: Technologies</h1>
 
