@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { loginUser } from '../redux/actions';
+import LoginAlert from '../components/loginAlert';
 
 class Login extends React.Component {
   constructor() {
@@ -56,37 +57,40 @@ class Login extends React.Component {
     const { email, enabledBtn } = this.state;
 
     return (
-      <div className="login-form">
-        { isLogged && <Redirect to="/carteira" /> }
-        <form>
-          <h1>TrybeWallet</h1>
-          <fieldset>
-            <input
-              type="email"
-              id="email-input"
-              name="email"
-              data-testid="email-input"
-              placeholder="Digite seu e-mail"
-              onChange={ this.handleUserInput }
-            />
-            <input
-              type="password"
-              id="password-input"
-              name="password"
-              data-testid="password-input"
-              placeholder="Digite sua senha"
-              onChange={ this.handleUserInput }
-            />
-            <button
-              type="button"
-              disabled={ enabledBtn }
-              onClick={ () => walletLogin(email) }
-            >
-              Entrar
-            </button>
-          </fieldset>
-        </form>
-      </div>
+      <>
+        <LoginAlert />
+        <div className="login-form">
+          { isLogged && <Redirect to="/carteira" /> }
+          <form>
+            <h1>TrybeWallet</h1>
+            <fieldset>
+              <input
+                type="email"
+                id="email-input"
+                name="email"
+                data-testid="email-input"
+                placeholder="Digite seu e-mail"
+                onChange={ this.handleUserInput }
+              />
+              <input
+                type="password"
+                id="password-input"
+                name="password"
+                data-testid="password-input"
+                placeholder="Digite sua senha"
+                onChange={ this.handleUserInput }
+              />
+              <button
+                type="button"
+                disabled={ enabledBtn }
+                onClick={ () => walletLogin(email) }
+              >
+                Entrar
+              </button>
+            </fieldset>
+          </form>
+        </div>
+      </>
     );
   }
 }

@@ -1,0 +1,34 @@
+.Modal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto;
+  height: 100vh;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  max-height: 300px;
+  max-width: 600px;
+  padding: 20px;
+  background-color: whitesmoke;
+  border-radius: 30px;
+}
+
+.Modal h1 {
+  text-align: center;
+}
+
+.Modal p {
+  text-align: justify;
+  line-height: 25px;
+  font-size: 1.2rem;
+}
+
+.Modal button {
+  width: 200px;
+  padding: 7px;
+  align-self: center;
+  cursor: pointer;
+}
