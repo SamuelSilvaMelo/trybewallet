@@ -20,11 +20,24 @@ class Login extends React.Component {
 
   checkUserData() {
     const { email, password } = this.state;
-    const minPassword = 6;
 
-    if (email.includes('@') && email.includes('.com') && password.length >= minPassword) {
+    // REGEX VALIDATION REFERENCES
+    // https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
+    // https://pt.stackoverflow.com/questions/1386/express%C3%A3o-regular-para-valida%C3%A7%C3%A3o-de-e-mail
+    // https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address
+    const emailRegex = /[a-z0-9._-]+@[a-z0-9]+\.[a-z]+$/i;
+    const checkEmail = emailRegex.test(email.toLocaleLowerCase());
+
+    const minPassword = 6;
+    const checkPassword = (password.length >= minPassword);
+
+    if (checkEmail && checkPassword) {
       this.setState({
         enabledBtn: false,
+      });
+    } else {
+      this.setState({
+        enabledBtn: true,
       });
     }
   }
